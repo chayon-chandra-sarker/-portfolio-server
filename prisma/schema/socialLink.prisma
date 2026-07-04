@@ -1,0 +1,9 @@
+model SocialLink {
+    id String @id @default(ulid())
+    github String @db.Text
+    linkedin String @db.Text
+    facebook String @db.Text
+    email String @db.VarChar(255)
+    
+    @@map("socialLinks")
+}

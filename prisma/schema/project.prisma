@@ -1,0 +1,15 @@
+model Project {
+    id String @id @default(ulid())
+    title String @db.VarChar(255)
+    slug String @unique
+    description String @db.Text
+    image String @db.Text
+    githubUrl String @db.Text
+    liveUrl String @db.Text
+    technology String[] 
+    featured Boolean @default(false)
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@map("projects")
+}
