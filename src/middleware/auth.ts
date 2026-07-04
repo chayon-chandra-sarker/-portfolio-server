@@ -1,9 +1,10 @@
 import type { NextFunction, Request, Response } from "express";
 import type { JwtPayload } from "jsonwebtoken";
+
 import config from "../config";
 import { prisma } from "../lib/prisma";
 import { jwtUtils } from "../utility/jwt";
-import { Role } from "../generated/prisma";
+import { Role } from "@prisma/client";
 
 declare global {
   namespace Express {
