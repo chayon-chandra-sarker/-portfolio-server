@@ -37,13 +37,6 @@ app.use("/api/experiences", experienceRoute);
 app.use("/api/messages", messageRoute);
 app.use("/api/socials", socialLinkRoute);
 
-app.use("*", (req, res) => {
-  res.status(404).json({
-    success: false,
-    statusCode: 404,
-    message: "Route Not Found",
-  });
-});
 
 app.use(globalErrorHandler);
 
