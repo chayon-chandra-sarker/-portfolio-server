@@ -30,7 +30,7 @@ const login = async (req: Request, res: Response, next: NextFunction) => {
   } catch (error:any) {
     sendResponse(res, {
       success: false,
-      statusCode: 500,
+      statusCode: 401,
       message: error.message,
       data: null,
     });

@@ -11,12 +11,12 @@ export const globalErrorHandler = (
   let message = "Something went wrong";
   console.log(error);
 
-  // Prisma Validation Error
+
   if (error instanceof Prisma.PrismaClientValidationError) {
     message = error.message;
   }
 
-  // Prisma Known Error
+  
   else if (error instanceof Prisma.PrismaClientKnownRequestError) {
     switch (error.code) {
       case "P2002":
