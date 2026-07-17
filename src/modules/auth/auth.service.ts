@@ -6,6 +6,7 @@ import type { ILogin } from "./auth.interface";
 import bcrypt from "bcrypt";
 
 const login = async (payload:ILogin)=>{
+  
     const {email, password} = payload;
     const user = await prisma.user.findFirstOrThrow({
         where:{email}

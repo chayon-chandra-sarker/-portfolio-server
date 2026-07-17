@@ -71,7 +71,17 @@ const logout = async (
   }
 };
 
+const me = async (req: Request, res: Response) => {
+  sendResponse(res, {
+    success: true,
+    statusCode: 200,
+    message: "Current User",
+    data: req.user,
+  });
+};
+
 export const authController = {
   login,
-  logout
+  logout,
+  me
 };
