@@ -16,7 +16,11 @@ import { globalErrorHandler } from "./middleware/globalErrorHandler";
 
 const app : Application = express();
 app.use(cors({
-    origin: config.app_url,
+    origin: [
+     config.app_url || "https://chayonsarker.vercel.app",
+      config.frontend_url || "http://localhost:3000",
+    ],
+   
     credentials:true
 }));
 
